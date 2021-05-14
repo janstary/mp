@@ -1,0 +1,28 @@
+.Dd May 13, 2021
+.Dt MP 1
+.Os
+.Sh NAME
+.Nm mp
+.Nd find minimal pairs
+.Sh SYNOPSIS
+.Nm
+.Op Ar file
+.Sh DESCRIPTION
+.Nm
+finds the minimal pairs present in a
+.Ar list
+of words, which is given either in a named
+.Ar file
+or read from the standard input, one word per line, in UTF-8.
+The minimal pairs are written to the standard output.
+.Sh EXAMPLES
+.Dl $ cat | mp
+.Dl fʊl
+.Dl pʊl
+.Dl pʊʃ
+.Dl pʊt
+.Dl ^D
+.Dl fʊl pʊl
+.Dl pʊl pʊʃ
+.Dl pʊl pʊt
+.Dl pʊʃ pʊt
