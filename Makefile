@@ -1,6 +1,7 @@
 PREFIX	= $(HOME)
 BINDIR	= $(PREFIX)/bin
 MANDIR	= $(PREFIX)/man/man1/
+CFLAGS	= -Wall -pedantic
 
 BIN = mp
 MAN = mp.1
