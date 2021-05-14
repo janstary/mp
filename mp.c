@@ -78,7 +78,8 @@ main(int argc, char** argv)
 			fprintf(stderr, "usage: mp [file]\n");
 			return 1;
 	}
-	setlocale(LC_CTYPE, "IPA.UTF-8");
+	if (setlocale(LC_CTYPE, "en_US.UTF-8") == NULL)
+		err(1, NULL);
 	list = calloc(1, sizeof(struct list));
 	while ((len = getline(&this, &size, in)) != -1) {
 		if ((n = strchr(this, '\n')))
