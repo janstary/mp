@@ -19,7 +19,8 @@ void
 add(char* this, struct list* list)
 {
 	struct word *word;
-	word = calloc(1, sizeof(struct word));
+	if ((word = calloc(1, sizeof(struct word))) == NULL)
+		err(1, NULL);
 	word->word = strdup(this);
 	if (list->tail) {
 		list->tail->next = word;
@@ -80,7 +81,8 @@ main(int argc, char** argv)
 	}
 	if (setlocale(LC_CTYPE, "en_US.UTF-8") == NULL)
 		err(1, NULL);
-	list = calloc(1, sizeof(struct list));
+	if ((list = calloc(1, sizeof(struct list))) == NULL)
+		err(1, NULL);
 	while ((len = getline(&this, &size, in)) != -1) {
 		if ((n = strchr(this, '\n')))
 			*n = '\0';
