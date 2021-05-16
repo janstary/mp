@@ -19,7 +19,7 @@ install: $(BIN) $(MAN) test
 	install -d -m 755 $(MANDIR) && install -m 644 $(MAN) $(MANDIR)
 
 uninstall:
-	rm -f $(BONDIR)/$(BIN)
+	rm -f $(BINDIR)/$(BIN)
 	rm -f $(MANDIR)/$(MAN)
 
 clean:
